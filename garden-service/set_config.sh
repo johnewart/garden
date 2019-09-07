@@ -1,2 +1,3 @@
 mkdir -p ~/.garden
-echo "firstRun: false" > ~/.garden/global-config.yml
+echo "analytics:" > ~/.garden/global-config.yml
+echo "  firstRun: false" >> ~/.garden/global-config.yml
