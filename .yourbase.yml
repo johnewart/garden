@@ -14,6 +14,8 @@ build_targets:
     environment:
       - CHOKIDAR_USEPOLLING="1"
       - DEBIAN_FRONTEND=noninteractive
+      - GARDEN_DISABLE_VERSION_CHECK='true'
+      - GARDEN_TASK_CONCURRENCY_LIMIT='10'
     commands:
       - apt-get update -q
       - apt-get install -yq rsync
@@ -22,6 +24,7 @@ build_targets:
       - npm install
       - cd garden-service
       - npm run build
+      - sh set_config.sh
       - npm test
 
 ci:
